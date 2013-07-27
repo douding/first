@@ -1,0 +1,34 @@
+.all {
+	
+	height: 1280px;
+	
+
+}
+.downlist-block {
+	
+	height: 200px;
+	
+	margin: 0 auto;
+    
+}
+.downlist{
+	width: 900px;
+	height: 200px;
+	
+	margin:0 auto;
+}
+.list{
+	width: 140px;
+	height: 40px;
+	float: left;
+	background-color: #9bd1c8;
+	margin-right: 40px;
+}
+.last-list{
+	width: 120px;
+	height: 200px;
+	background-color: #eccc63;
+	position: relative;
+	top: -200px;
+	float: right;
+}

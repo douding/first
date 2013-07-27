@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mountaineer</title>
+</head>
+<body>
+	<button id="huangshan">黄山</button>
+	<button id="huashan">华山</button>
+	<button id="wudanshan">武当山</button>
+
+
+<script>
+	
+	window.onload = function (){
+
+
+    var drama = function(opts){
+
+		this.title = opts.title;
+		this.author = opts.author;
+
+		this.actor = opts.actor;
+		this.mood = opts.mood;
+
+
+}
+
+drama.BAD_MOOD = 0;
+drama.BETTER_MOOD = 1;
+
+	drama.prototype.overture = function(){
+
+		if(this.mood == drama.BAD_MOOD){
+
+			alert('crying');
+
+		}else if(this.mood == drama.BETTER_MOOD){
+
+			alert('laughing');
+
+		}else{
+
+			alert('stupid')
+		}
+
+	}
+
+	drama.prototype.get = function(prop){
+
+		return this.hasOwnProperty(prop) ? this[prop]:null;
+
+	}
+
+
+var SharksDrama = new drama({
+		title : '情深深雨蒙蒙',
+		author : '琼瑶',
+		actor : '赵薇',
+		mood : drama.BETTER_MOOD
+})
+
+
+
+document.body.appendChild( function(){
+
+	var btn = document.createElement('button'),
+		btn2 = document.createElement('button'),
+		fragment = document.createDocumentFragment();
+
+		btn.innerText = '点我查看这个剧本的信息';
+		btn2.innerText = 'Start it!';
+
+		fragment.appendChild(btn);
+		fragment.appendChild(btn2);
+
+
+			btn.addEventListener('click',function(){
+
+					var informations = '电影名:' + SharksDrama.get('title') + '\n' +
+									   '导演:' + SharksDrama.get('author') + '\n' +
+									   '演员:'  + SharksDrama.get('actor') + '\n' +
+									   '心情:' + ( SharksDrama.get('mood') == drama.BAD_MOOD ? ':(' : ':)' ) + '\n';
+						if( confirm(informations + '确定要进去看吗￥50/人???') ) {
+
+								btn2.click();
+
+						}else{
+							alert('Bye-bye');
+						}
+			})
+
+			btn2.addEventListener('click',function(e){
+
+				SharksDrama.overture();
+
+			})
+
+
+		return fragment;
+
+
+
+}() )
+
+
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,157 @@
+
+body{
+   font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
+}
+.heading-single-out{
+	
+    font-size: 12px;
+    width: 980px;
+    z-index: 10;
+    margin: 0px auto;
+
+
+}
+.meta{
+	padding:12px 2px 8px 1px;
+	min-height: 1%; 
+	text-align: center;
+	z-index: 11;
+
+
+}
+.meta:after{
+	content: ".";
+	display: block;
+	width: 0;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+#listone .list{
+    float: left;
+}
+
+li{
+	display:list-item;
+	
+
+}
+.link {
+	
+	color: #0192b5;
+  
+	text-decoration: none;
+	line-height: 2em;
+	display: block;
+    text-align: left;
+    background-position: center;
+    
+    margin-right:8px;  
+
+
+}
+.link:hover{
+    text-decoration: underline;
+}
+
+.helplink{
+	float: right;
+}
+
+.Esty{
+      display:block;
+      width: 100px;
+      height: 55px;
+      float: left;
+      background:url(../img/Esty.png) no-repeat 0 0;
+      text-indent: -9999px;
+      margin-right: 5px; 
+
+}
+
+
+
+.mainnav{
+    float: left;
+}
+.mainnav > .item{
+    float: left;
+  }
+.mainnav .item:first-child .item-link{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.mainnav .item-link{
+    text-decoration: none;
+    color: #0192b5;
+    height: 55px;
+    padding: 0 24px;
+    border-right: 1px solid #FFF;
+    line-height: 55px;
+    background-color: #aaa;
+    display: block;
+    font-size: 14px;
+}
+.mainnav .item-link:hover{
+   background-color:#aaa;
+}
+form.search{
+    float: left;
+}
+.search .input-group{
+    height: 40px;
+    width: 600px;
+    background-color: #aaa;
+    padding-top: 15px;
+    padding-left: 15px;
+    position: relative;
+}
+.search input[name=search]{
+    padding: 6px;
+    border: 1px solid #b3b3b3;
+    border-right-color: #CCC;
+    border-bottom-color: #CCC;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #aaa;
+    font-family: arial;
+    white-space: nowrap;
+    height: 12px;
+    position: absolute;
+    width: 510px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;    
+}
+
+.search button[type=submit]{
+    position: absolute;
+    left: 545px;
+    height: 26px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+.cart{
+    float: left;
+    margin-left: 3px;
+}
+.cart .shopping{
+    display: block;
+    height: 55px;
+    width: 100px;
+    background: url(../img/header-master.png) no-repeat #aaa  -567px 0px;
+    text-decoration: none;
+    color: #0192b5;
+    font-weight: bold;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.cart .shopping:hover{
+    background-color: #aaa;
+}
+.cart .shopping span{
+    position: relative;
+    top: 18px;
+    left: 47px;
+}

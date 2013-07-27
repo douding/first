@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test Slide</title>
+	<link rel="stylesheet" href="css/reset.css">	
+	<style>
+
+.slider{
+	width:280px;
+	height: 150px;
+	padding: 20px;
+	border:1px solid #ccc;
+	margin:50px auto;
+	overflow: hidden;
+}
+
+.lists{
+	overflow: hidden;
+	width: 1000em;
+	position: relative;
+	left: 0px;
+	transition:all 0.2s;
+}
+.lists .item{
+	float: left;
+	width:280px;
+	height:150px;
+	color:#fff;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 150px;
+	text-align: center;
+	background-color: #000;
+	margin-right: 20px;
+}
+	</style>
+</head>
+<body>
+
+<div class="wrap">
+		
+		<div class="slider">
+			<ul class="lists">
+				<li class="item">a</li>
+				<li class="item">b</li>
+				<li class="item">c</li>
+				<li class="item">d</li>
+			</ul>
+
+		</div>
+			<p class="ctrls">
+			</p>
+
+</div>
+
+<script>
+	
+window.onload = function(){
+
+
+var Slide = function(){
+
+	this.unit = 300;
+	this.list = document.querySelector('.lists');
+	this.items = document.querySelectorAll('.item');
+	this.ctrls = document.querySelector('.ctrls');
+
+	this._initEvent();
+
+}
+
+Slide.prototype._initEvent = function(){
+
+	var that = this;
+
+		var T = ['a','b','c','d'];
+
+        Array.prototype.forEach.call(T ,function(val,index){
+
+
+
+        	var button = document.createElement('button');
+
+        		button.innerHTML = val;
+
+        	that.ctrls.appendChild(button);
+
+        	
+
+        	button.addEventListener('click',function(e){
+
+
+        			that.which(e,index);
+
+
+        	},false)
+      
+        })
+
+}
+
+Slide.prototype.which = function(e,index){
+
+        	var m = -index * this.unit;
+
+			this.list.style.left = m + 'px';
+        	
+} 
+
+
+
+	var mySlide = new Slide();
+
+
+		console.dir(mySlide)
+
+
+		window.Slide = mySlide;
+
+	
+
+
+	return;
+
+	var unit = 300;
+
+	var list = document.querySelector('.lists');
+
+	var items = document.querySelectorAll('.item');
+    
+    var ctrls = document.querySelector('.ctrls')
+
+
+var which = function(e,index){
+
+        		
+
+        		var m = -index * unit;
+
+
+        		list.style.left = m + 'px';
+        	
+       } 
+
+
+        Array.prototype.forEach.call( ['a','b','c','d'],function(val,index){
+
+
+        	var button = document.createElement('button');
+
+        		button.innerHTML = val;
+
+        	ctrls.appendChild(button);
+
+        	
+
+        	button.addEventListener('click',function(e){
+
+
+        			which(e,index);
+
+
+        	},false)
+      
+        })
+
+
+		items = Array.prototype.slice.call(items);
+
+		
+
+		items.forEach(function(item,index){
+				
+				item.addEventListener('click',function(e){
+
+
+						var idx = index == 3 ? 0 : ( index + 1) ;
+
+								which(e,idx)
+
+				},false)
+
+		})
+
+}
+
+</script>	
+</body>
+</html>

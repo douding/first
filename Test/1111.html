@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Esty-First work by px</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="heading" class="heading-single-out">
+    	<div id="meta group" class="meta">
+    		<ul id="listone" class="allul">
+    			<li class="list">
+    				<a class="link" id="seli" href="http://www.etsy.com/sell?ref=so_sell">出售</a>
+    			</li>
+    			<li class="list">
+    				<a class="link" href="http://www.etsy.com/registry?ref=so_registry">注册</a>
+                    <span></span>
+    		    </li>
+    		    <li class="list">
+    		    	<a class="link" href="">交流</a>
+    		    </li>
+    			<li class="list">
+    				<a class="link" href="">博客</a>
+    			</li>
+    			<li class="list">
+    				<a class="link" href="">客户端</a>
+    			</li>
+    		</ul>
+    		<ul  id="helplink" class="allul">
+    			<li class="helplink">
+    				<a class="link" href="">帮助</a>    			
+    			</li>
+    		</ul>
+    	</div>
+    	<div id="navigation-group" class="clear" role="navigation">
+            <h1 id="Esty"  >
+                <a class="Esty" href="http://www.etsy.com/?ref=so_home">Esty</a>
+                
+            </h1>
+            <ul class="mainnav">
+                <li class="item">
+                    <a class="item-link" href="https://www.etsy.com/join?from_page=http%3A%2F%2Fwww.etsy.com%2F%3Fref%3Dso_home&ref=so_reg" title="register" >注册</a>
+                </li>
+                <li class="item">
+                    <a class="item-link" href="https://www.etsy.com/signin?from_page=http%3A%2F%2Fwww.etsy.com%2F%3Fref%3Dso_home&ref=so_sign" title="sign in">登陆</a>
+                </li>
+            </ul>
+            <form action="http://www.etsy.com/search.php" id="search" class="search">
+                <div class="input-group">
+                    <input type="text" name="search" id="search_query" class="text search_no_dropdown" tabindex="0" placeholder="搜索商品及店铺" autocomple="off">
+                    
+                    <button id="search_submit" name="search_submit" type="submit">搜&nbsp;索</button>
+
+                </div>
+                <input type="hidden" value="all" name="search-type">
+            </form>
+            <div class="cart">
+                <a class="shopping" href="https://www.etsy.com/cart?ref=so_cart" title="购物车" id="cart_ref">
+                    <span>购物车</span>
+                </a>
+            </div>
+         </div>
+    </div>
+    <script>
+        $(function(){
+            var $input = $('input[name=search]'),
+                $button = $('button[type=submit]');
+
+                $button.click(function (e) {
+                    
+                    var val = +$input.val();
+
+                        switch(val){
+
+                            case 1:
+                                alert('hello kitty');
+                                break;
+                            case 2:
+                                alert('hello Kevin');
+                                break;
+                            case 3:
+                                var $box = $('<div>').css({
+                                    height:100,
+                                    width:100,
+                                    backgroundColor:'red',
+                                    position:'absolute',
+                                    top:200,
+                                    left:200
+                                });
+                                    $box.appendTo('body').delay(200).animate({
+                                            width:300,
+                                            height:300,
+                                            left: 300
+                                    }).delay(200).animate({
+                                        width:10,
+                                        height:10
+                                    });
+                                break;
+                            default:
+                                alert('what are you doing ....');
+                        }
+
+                });
+
+                $('form').submit(function(){
+                    return false;
+                })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQ_plug_in</title>
+	<script src="/iTeam/leader/lib/jquery.js"></script>
+	<style>
+    .box{
+
+    	width: 100px;
+    	height: 150px;
+    	background-color: #000;
+    }
+
+	</style>
+</head>
+<body>
+
+	<div class="box"></div>
+	
+
+<script>
+	;;;;(function(){
+
+		var Infomation = function(){
+
+			
+
+			this.$info=$('<div class="box" style="width:100px; backgroundcolor:#fff ; position:absolute ; border:2px solid red ;left:110%;top:0"></div>');
+
+         }
+
+         $.fn.showInfo = function(){
+
+			var $that = $(this);
+
+         	$(this).on("mouseenter" ,function(){
+
+         		
+
+         		$that.css("position","relative");
+ 
+         		var x = new Infomation();
+
+         		$that.append(x.$info);})
+
+         	
+
+         	$(this).on("mouseleave", function(){
+
+         		$that.css("position","relative")
+
+
+                $that.find('.box').remove();
+
+         	})
+
+         }
+     }())
+
+
+
+             
+
+        $(function(){
+
+		var $div = $('<div></div>');
+
+		// $('div').insertAfter($div).addClass('box').showInfo();
+		$('div').showInfo();
+
+	})
+
+
+	
+	
+
+
+
+
+</script>
+
+
+</body>
+</html>

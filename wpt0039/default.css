@@ -1,0 +1,155 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #F3F3F3;
+}
+
+form {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0px;
+}
+
+body, th, td, input, textarea, select {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #8F8F8F;
+}
+
+p, blockquote, ul, ol, dl {
+	margin-top: 0px;
+	margin-bottom: 1em;
+	text-align: justify;
+}
+
+ul {
+	margin-left: 0px;
+	padding-left: 0px;
+	list-style: none;
+	line-height: 20px;
+}
+
+.list1 {
+	margin-left: 0px;
+	padding-left: 0px;
+	list-style: none;
+}
+
+.list1 li {
+	padding-left: 18px;
+}
+
+.list1 a {
+	color: #995846;
+}
+
+a {
+	color: #995846;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.link1 {
+	text-decoration: none;
+	font-size: 9px;
+	color: #AD7E71;
+}
+
+.link2 {
+	padding-left: 20px;
+	background: url(images/img7.gif) no-repeat left;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 11px;
+	font-weight: bold;
+	color: #731B00;
+}
+
+.text1 {
+	text-align: center;
+	font-size: 10px;
+	color: #AB796A;
+}
+
+.text2 {
+	background: url(images/img10.gif) no-repeat right top;
+	padding-bottom: 5px;
+	letter-spacing: -1px;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #731B00;
+}
+
+.text3 {
+	font-weight: bold;
+	color: #995846;
+}
+
+.text4{
+	letter-spacing: -2px;
+	text-transform: uppercase;
+	font-size: 24px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #F0CBC0;
+}
+
+.text5 {
+	letter-spacing: 0px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #CC9584;
+}
+
+.style1 {
+}
+
+.style1 a {
+}
+
+.style1 a:hover {
+}
+
+.bg1 {
+	background-color: #F8F8F8;
+}
+
+.bg2 {
+	background: url(images/img2.jpg) no-repeat left top;
+}
+
+.bg3 {
+	background: url(images/img1.jpg) no-repeat left top;
+	width: 249px;
+	height: 252px;
+}
+
+.align-justify { text-align: justify; }
+.align-right { text-align: right; }
+
+img { border: none; }
+
+.img1 {
+	float: left;
+	margin: 3px 15px 10px 0px;
+}
+
+.img2 {
+	float: right;
+	margin: 3px 0px 0px 15px;
+}
+
+hr { display: none; }
+
+.hr1 {
+	height: 1px;
+}
+

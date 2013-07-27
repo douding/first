@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" >
+	<title>Document</title>
+	<script src="/iTeam/leader/lib/jquery.js"></script>
+<style>
+	*{marign:0;padding:0;}
+	body{background: url(img/bg.png) repeat;}
+
+	.my-dialog{background-color: #fff;position: absolute;top:0px;left:0px;border:1px solid #ccc;box-shadow: 1px 2px 5px #666;border-radius: 5px;}
+	.my-dialog .hd{height:32px;line-height: 32px;background-color: #f2f2f2;}
+	.my-dialog .hd h2{font-size: 14px;padding:0 5px;float: left;line-height: 32px;margin: 0px;}
+	.my-dialog .hd .close{float: right;height: 16px;width:16px;background-color: #333;color: white;margin-right: 5px;margin-top: 5px;line-height: 14px;text-align: center;border-radius: 2px;font-size: 10px;text-decoration: none;}
+	.my-dialog .hd .close:hover{background-color: orange;}
+	.my-dialog .hd .close:active{background-color: red;}
+	.my-dialog .bd{padding:15px;}
+	.my-dialog .bd .tx-cont{min-height: 80px;min-width: 400px;font-size: 16px;line-height: 1.6em;}
+
+
+
+</style>
+</head>
+<body>
+<button class="open-dialog">Show me</button>
+
+<script>
+	
+;;;;;(function(){
+
+
+
+//Dialog Class
+var Dialog = function(opts){
+
+	var that = this;
+
+		this.options = $.extend({
+			title : 'this is title',
+			content : 'this is content'
+		},opts);
+
+
+		//Create UI
+		this._renderUI();
+
+		this.setTitle(this.options.title);
+		this.setContent(this.options.content);
+
+		//Attach Events
+
+
+		this.$el.find('a.close').on('click',function(){
+
+			console.log(that)
+
+			console.log('\n')
+
+			that.close();
+
+		})
+
+
+			//=============//
+	//drag event
+
+	this.$el.find('.hd').on('mousedown',function(e){
+
+		var $this = $(this);
+
+		var _el_offset = that.$el.offset(),
+			_x = e.offsetX,
+			_y = e.offsetY;
+
+			$(document.body).css('user-select','none');
+
+			$(this).css('cursor','move')
+
+		$(window).on('mousemove.my_dialog_move',function(e){
+
+			var X =  e.pageX - _el_offset.left - _x,
+				Y =  e.pageY - _el_offset.top - _y;
+
+				that.$el.css({
+					top: _el_offset.top + Y,
+					left : _el_offset.left + X
+				})
+
+
+				e.preventDefault();
+
+		})
+
+		$(window).on('mouseup.my_dialog_up',function(e){
+
+			$(window).off('mousemove.my_dialog_move mouseup.my_dialog_up');
+			$(document.body).css('user-select','text');
+			$this.css('cursor','default');
+
+		})
+
+	})
+
+
+}
+
+Dialog.prototype._renderUI = function(){
+	var html = '<div class="my-dialog"> <div class="hd"> <h2></h2> <a href="javascript:;" class="close">x</a> </div> <div class="bd"> <div class="tx-cont"> </div> </div> </div>';
+
+
+	this.$el = $(html).hide();
+
+
+
+	this.$el.appendTo(document.body);
+
+}
+
+Dialog.prototype.setTitle = function(title){
+
+	this.title = title;
+
+	this.$el.find('h2').text(title);
+
+}
+
+Dialog.prototype.setContent = function(cont){
+
+	this.content = cont;
+
+	this.$el.find('.tx-cont').html(cont);
+
+}
+
+Dialog.prototype.open = function(title,cont){
+
+	!!title && typeof title == 'string' && this.setTitle(title);
+
+	!!cont && typeof cont == 'string' && this.setContent(cont);
+
+	this.$el.fadeIn();
+
+	this.smartPosition();
+
+
+	$(window).on('resize.smartPosition', $.proxy( function(){
+
+			this.smartPosition();
+		
+	} ,this) )
+
+
+}
+
+Dialog.prototype.close = function(){
+
+	this.$el.fadeOut();
+
+	$(window).off('resize.smartPosition');
+
+}
+
+$.extend(Dialog.prototype,{
+
+
+	smartPosition : function(){
+
+		var el_w = this.$el.outerWidth(),
+			el_h = this.$el.outerHeight(),
+			win_w = $(window).width(),
+			win_h = $(window).height();
+
+
+		this.$el.css({
+
+				left : (win_w - el_w)/2,
+				top : (win_h - el_h)/2
+
+		})
+
+
+	}
+
+
+})
+
+
+
+
+
+MyDialog1 = new Dialog({
+		title : 'absolute',
+		content : 'hi.honey .it me .'
+});
+
+MyDialog2 = new Dialog({
+		title : 'b',
+		content : 'hi.honey .it me .'
+});
+MyDialog3 = new Dialog({
+		title : 'c',
+		content : 'hi.honey .it me .'
+});
+MyDialog4 = new Dialog({
+		title : 'd',
+		content : 'hi.honey .it me .'
+});
+
+
+
+
+
+
+
+
+
+
+var xx = this;
+
+
+var i = 1;
+
+$('button.open-dialog').on('click',function(e){
+var item;
+	if( item = xx['MyDialog' + i] ){
+
+		item.open();
+		i++;
+	}
+
+})
+
+
+
+}())
+
+</script>
+	
+</body>
+</html>

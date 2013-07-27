@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Js-downlist</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/Js-downlist.css">
+</head>
+<body>
+	<div class="all">
+		<div class="downlist-block">
+			<ul class="downlist">
+				<li class="list" name="frist_list">
+					
+						<div class="last-list"></div>
+					
+				</li>
+				<li class="list" name="frist_list">
+					
+						<div class="last-list"></div>
+					
+				</li>
+				<li class="list" name="frist_list">
+					
+						<div class="last-list"></div>
+					
+				</li>
+				<li class="list" name="frist_list">
+					
+						<div class="last-list"></div>
+					
+				</li>
+				<li class="list" name="frist_list">
+					
+						<div class="last-list"></div>
+					
+				</li>
+			</ul>
+		</div>
+	</div>
+
+<script>
+	window.onload = function (){
+
+		var last = document.querySelector('.last-list');
+		var first = document.querySelector('.list');
+
+		
+
+			first.addEventListener('mouseover',function(e){
+
+				last.style.top= 40 +'px';
+				
+
+			},false)
+
+			first.addEventListener('mouseout',function(e){
+
+				last.style.top= -200 +'px';
+				
+
+			},false)
+
+
+		
+
+
+
+}
+	
+</script>
+	
+</body>
+</html>

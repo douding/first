@@ -1,0 +1,9 @@
+.toolbar-list-left{
+	display:inline;
+}
+.toolbar-list-left .item .icon{
+	display:block;
+}
+.toolbar-list-right .list .icon{
+	display:block;
+}
